@@ -19,7 +19,7 @@
 
  "devDependencies": {
     "parcel": "^2.11.0"
-  }"
+  }
 `
 ^(caret) : when a newer version has minor upgradation will come of parces,
  this ^ will already make the changes.
