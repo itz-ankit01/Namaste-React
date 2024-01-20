@@ -20,14 +20,14 @@
  "devDependencies": {
     "parcel": "^2.11.0"
   }"
-
+`
 ^(caret) : when a newer version has minor upgradation will come of parces,
  this ^ will already make the changes.
 
  ~(tilda) : when a newer version has major upgradation will come of parces,
  this ~ will already make the changes.
 
- But it always preferred to use ^ than ~ as major changes in parcel can break or disrupt your application in different ways
+ But it always preferred to use ^ than ~ as major changes in parcel can break or disrupt your application in different ways`
 ```
 
 ### package-lock.json 
