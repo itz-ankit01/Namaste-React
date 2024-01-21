@@ -84,3 +84,15 @@
 
 work for all last 2 versions of all the browsers
 ```
+
+- - - 
+# Episode 3
+
+### Shortcut for running the Project
+- add `"start" : 'parcel index.html'` in `Script` found in package.json
+
+- `npm run start = npm start`
+
+- add `"build" : 'parcel build index.html'` in `Script` found in package.json
+
+- `npm run build != npm build`

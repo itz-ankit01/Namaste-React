@@ -1,37 +1,52 @@
-/**
- * <div id='parent'>
- *      <div id='child'>
- *          <h1> i'm h1 tag </h1>
- *          <h2> i'm h2 tag </h2>
- *      </div>
- *      <div id='child2'>
- *          <h1> i'm h1 tag </h1>
- *          <h2> i'm h2 tag </h2>
- *      </div>
- * </div>
- * 
- * ReactElement(Object) => HTML(Browser understands) 
- * 
- */
-
 import React from "react";
-import ReactDOM  from "react-dom/client";
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
-    'div',
-    {id:'parent'}, [       // {} = contains attributes to tag
-    React.createElement('div', {id: 'child'},[ 
-    React.createElement('h1', {}, "I'm h1 tag"),
-    React.createElement('h2', {}, "I'm h2 tag")
-    ]),
-    React.createElement('div', {id: 'child2'},[ 
-    React.createElement('h1', {}, "I'm h1 tag"),
-    React.createElement('h2', {}, "I'm h2 tag")
-    ])
-]);
+// React.createElement => ReactElement a JS Object => HTMLElement( render package convert it into HTML)
 
-console.log(parent);       // here Heading is an Object not a h1 tag still, This object represents the virtual DOM structure of the h1 element you've created using ReactElement
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Namaste React ❤️"
+);
+console.log(heading);
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+// JSX -  HTML like or XML like syntax
+// JSX (transpiled (JSX is converted so that it can be readable by JS engine) before it reaches to JS engine) - PARCEL -> Babel(a JS Compiler, it transpiled the JSX code before it reaches to browser)
 
-root.render(parent)        //  how react works with virtual DOM elements and renders them into the real DOM
+// Behind the Scene
+// JSX Code => Babel transpiles it to React.createElement => ReactElement a JS Object => HTMLElement( render package convert it into HTML)
+
+
+
+// 2 Types of React Component
+// Class Based Component - OLD
+// Functional component - NEW
+
+// React Functional Component : A function Whose name start with Capital Letter , which returns a React Element
+
+const HeadingComponent = () => {
+  return <h1>Namaste React Functional Component</h1>;
+};
+
+
+
+// React component
+const Title = () => (
+    <h1 className="heading" tabIndex="5">
+        Namaste React Using JSX
+    </h1>
+  );
+
+// Component Composition
+const HeadingComponent2 = () => (
+    <div id="container">
+        <Title/>
+        {Title()}
+        <Title></Title>
+        <h1 className="head">Namaste React Functional Component</h1>
+    </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent2/>);
