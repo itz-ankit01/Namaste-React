@@ -36,3 +36,5 @@
 - cuz, when u add a new item, react will get confused about which properties belong to which mapped component
 
 - `not using key(not acceptable) <<<< use index as key(bad practice) <<<<< use id as key (best practice)`
+
+
