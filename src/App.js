@@ -4,15 +4,6 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 
 
-
-
-
-
-
-
-
-
-
 // not using key(not acceptable) <<<< use index as key(bad practice) <<<<< use id as key (best practice)
 
 
