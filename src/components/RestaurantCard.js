@@ -6,9 +6,7 @@ const RestaurantCard = (props) => {
   const {
     name,
     cuisines,
-    deliveryTime,
     costForTwo,
-    lastMileTravel,
     sla,
     avgRating,
     cloudinaryImageId,
@@ -24,12 +22,12 @@ const RestaurantCard = (props) => {
         src={CDN_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
-      <h4 className="cuisine">{cuisines.join(", ")}</h4>
+      <p className="cuisine">{cuisines.join(", ")}</p>
       <div className="res-foot">
         <h4
           className="rating"
           style={
-            avgRating > 4
+            avgRating >= 4
               ? { backgroundColor: "#25BE2F" }
               : { backgroundColor: "red" }
           }

@@ -123,3 +123,34 @@ const Body = () => {
 
 - when u give input in input Box i.e, `cafe`
 - 4 times Body component has been re-rendered
+
+
+# Episode-07 [ Finding the Path ]
+
+- ### useEffect
+    - if no dependency array => useEffect is called on every render
+    - if dependency array is empty = [] => useEffect is called on initial render (just once) 
+    - if dependency array is [btnNameReact] => useEffect is called everytime [btnNameReact] is updated
+
+- ### useState 
+    - Never create useState() outside of any component it will throw error
+    - Do not create useState Hook inside any loop, or if else cond, or inside any function, as it creates inconsistency to the  code
+
+## React-Router
+- To install react router dom run command `npm i react-router-dom` on terminal
+- `createBrowseRoute()` takes the list of object as argumnent and creates Router
+- RouterProvider : a component, provide Router configuration to the App
+
+### Children Route
+- it is used to fix the Header for every page of our Web App
+- `<Outlet />` a react component, outlet will be filled with children, list of object
+- When u r using react and u want to route to some other page, never use anchor tag.
+- cuz, the whole page got refreshed again and again when u move to other page
+- In react, we would not re-fresh the whole page and still route to other page.
+- `<Link to=""> </Link>` it works exactly as the anchor tag.
+- React is known as Single Page Application.
+
+There are 2 types of routing in web-Apps.
+- Client Side Routing : we do not make any network call, while we move to other page bcuz, all the the component are already loaded in our App.
+- Server Side Routing : u make a network call, fetch data(i.e, about us page) just render on UI.
+- Only network call, during fetching data from API

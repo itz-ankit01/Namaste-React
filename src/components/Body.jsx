@@ -1,8 +1,8 @@
 // import resList from "../utils/mockData";
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-
 // BODY COMPONENT
 const Body = () => {
   // LOcal state variable = superpowerful state variable
@@ -22,8 +22,8 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-        const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.785813458457945&lng=85.00420164316893&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -76,7 +76,6 @@ const Body = () => {
               });
               setFilteredRestaurants(filteredRestaurants);
               setSearchText("");
-              
             }}
           >
             Search
@@ -89,7 +88,7 @@ const Body = () => {
               (res) => res.info.avgRating >= 4
             );
             console.log("btn clicked");
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top Rated Restaurant
@@ -97,7 +96,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link className="text-link"
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
@@ -105,6 +109,5 @@ const Body = () => {
 };
 
 export default Body;
-
 
 // data.cards[4].card.card.gridElements.infoWithStyle.restaurants
