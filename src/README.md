@@ -154,3 +154,29 @@ There are 2 types of routing in web-Apps.
 - Client Side Routing : we do not make any network call, while we move to other page bcuz, all the the component are already loaded in our App.
 - Server Side Routing : u make a network call, fetch data(i.e, about us page) just render on UI.
 - Only network call, during fetching data from API
+
+
+# Episode-08 [ Let's get Classy ]
+
+### ComponentDidMount()
+
+- `ComponentDidMount ` is used to call API as in class Based component first constructor , then render, then componentDidMount is called.
+- Mount === Loading
+
+
+```jsx
+<h1>Count: {count}</h1> 
+
+        <button
+          onClick={() => {
+            // NEVER UPDATE THE STATE VARIABLE DIRECTLY, NEVER EVER DO THAT, IT WILL THROW ERROR
+            // this.state.count = this.state.count + 1
+
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          Click Increase
+        </button>
+```

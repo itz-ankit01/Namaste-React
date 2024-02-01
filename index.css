@@ -175,3 +175,14 @@
     color: inherit;
     text-decoration: inherit;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+  
+}
+
+.user-img{
+    border-radius: 50%;
+
+}
