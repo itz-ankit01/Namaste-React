@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 // BODY COMPONENT
 const Body = () => {
   // LOcal state variable = superpowerful state variable
@@ -46,6 +48,15 @@ const Body = () => {
   //   return <Shimmer />
   // }
 
+  const onlineStatus = useOnlineStatus();
+
+  if(onlineStatus == false) return(
+    <>
+    <h1>Looks like, You are Offline!!! </h1>
+    <h1>Plz check your Internet Connection</h1>
+    </>
+  )
+
   // using ternary operator to return component
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -68,6 +79,7 @@ const Body = () => {
               // filter the restaurant and update the UI
               // SearchText
               console.log(searchText);
+
 
               const filteredRestaurants = listOfRestaurants.filter((res) => {
                 return res.info.name

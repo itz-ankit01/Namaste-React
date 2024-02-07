@@ -180,3 +180,16 @@ There are 2 types of routing in web-Apps.
           Click Increase
         </button>
 ```
+
+# Episode-09 [ Optimising Our App ]
+
+`Modularity` : It means u break your code into small small module, and your code becomes, more maintainable and more testable.
+```
+code splitting
+chunking
+lazy loading
+on demand loading
+dynamic import
+dynamic bundling, all are same
+```
+
