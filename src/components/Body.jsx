@@ -25,7 +25,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.785813458457945&lng=85.00420164316893&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6105073&lng=77.1145653&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -33,11 +33,11 @@ const Body = () => {
 
     // Option Chaining
     setListOfRestaurants(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
     setFilteredRestaurants(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
   };
@@ -62,11 +62,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex justify-center items-center mt-5">
+        <div className="p-4 m-4">
           <input
             type="text"
-            className="search-box"
+            className="px-10 py-2 border border-solid border-orange-300 p-2 rounded-l-md outline-none hover:border-orange-400"
             placeholder="Search the restaurant you want...."
             value={searchText}
             onChange={(e) => {
@@ -74,7 +74,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="search-btn"
+            className="py-2 px-4 border border-solid border-orange-300 bg-orange-300 rounded-r-md text-black hover:bg-orange-400 hover:border-orange-400 "
             onClick={() => {
               // filter the restaurant and update the UI
               // SearchText
@@ -93,8 +93,9 @@ const Body = () => {
             Search
           </button>
         </div>
+        <div className="p-4 m-4">
         <button
-          className="filter-btn"
+          className="py-2 px-4 border border-solid border-orange-300 bg-orange-300 rounded-md text-black hover:bg-orange-400 hover:border-orange-400"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating >= 4
@@ -105,8 +106,9 @@ const Body = () => {
         >
           Top Rated Restaurant
         </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap px-12" >
         {filteredRestaurants.map((restaurant) => (
           <Link className="text-link"
             key={restaurant.info.id}
@@ -122,4 +124,5 @@ const Body = () => {
 
 export default Body;
 
+// data.cards[4].card.card.gridElements.infoWithStyle.restaurants
 // data.cards[4].card.card.gridElements.infoWithStyle.restaurants

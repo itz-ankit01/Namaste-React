@@ -15,15 +15,15 @@ const RestaurantCard = (props) => {
   const displayRating = avgRating || 3;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "rgb(251 251 251)" }}>
+    <div className="p-4 m-4 w-[250px] rounded-xl border border-solid  bg-slate-50 hover:shadow-2xl" >
       <img
-        className="res-img"
+        className="rounded-md shadow-2xl"
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <p className="cuisine">{cuisines.join(", ")}</p>
-      <div className="res-foot">
+      <h3 className="font-bold py-4 text-lg">{name}</h3>
+      <p className="font-semibold">{cuisines.join(", ")}</p>
+      <div className="flex py-4">
         <h4
           className="rating"
           style={

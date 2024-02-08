@@ -193,3 +193,23 @@ dynamic import
 dynamic bundling, all are same
 ```
 
+
+# Episode-10 [ Jo Dikhta Hai, Wo Bikta hai ]
+
+#### Different CSS Framework
+
+1. Read about `Sass & Scss`
+2. Read about `Styled Component`
+3. Material UI
+4. Bootstrap
+5. Chakra UI
+6. Ant Design
+
+`installing Taiwind in Project`
+```
+1. Framework Guide
+2. npm install -D tailwindcss postcss
+3. npx tailwindcss init
+```
+
+`PostCSS` : baically a tool for transforming your css in your JS
