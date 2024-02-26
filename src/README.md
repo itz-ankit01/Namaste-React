@@ -213,3 +213,9 @@ dynamic bundling, all are same
 ```
 
 `PostCSS` : baically a tool for transforming your css in your JS
+
+# Episode-10 [ Data is the new Oil ]
+
+`Higher Order Component/Function` : Higher order component is a normal JS function that takes a component, enhanches it like adding some features and returns that component
+
+`Modularity ` : It means u break ur code into small small module, and ur code becomes more sustainable and testable.

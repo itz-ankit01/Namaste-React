@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 // import Grocery from "./components/Grocery";
 
 // not using key(not acceptable) <<<< use index as key(bad practice) <<<<< use id as key (best practice)
@@ -22,11 +23,29 @@ import Shimmer from "./components/Shimmer";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const Applayout = () => {
+  // Authentication
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    // Make an API Call to
+    const data = {
+      name: "Ankit Agnihotri",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    // Default value
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      {/* Ankit Agnihotri */}
+      <div className="app">
+        {/* <UserContext.Provider value={{ loggedInUser: "RM10" }}> */}
+          {/* RM10 */}
+          <Header />
+        {/* </UserContext.Provider> */}
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

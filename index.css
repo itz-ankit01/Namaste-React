@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hover effect */
+.hover-effect:hover {
+    transform: scale(0.9); /* Scale down the card */
+  }
+  
+  /* Transition effect */
+  .transition-effect {
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  

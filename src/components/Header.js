@@ -1,7 +1,8 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   // Never create useState() outside of any component it will throw error
@@ -19,6 +20,8 @@ const Header = () => {
   }, [btnNameReact]);
 
   const OnlineStatus = useOnlineStatus();
+
+  const {loggedInUser} = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-green-200 lg:bg-orange-100">
@@ -59,6 +62,7 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
+          <li className="p-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>
